@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rasphost</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="RasphostSquareLogo.gif"> <!-- Иконка сайта -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('mc.otf'); /* Путь к файлу шрифта */
+        }
+
+        body {
+            background-color: #121212; /* Основной цвет */
+            color: #FFFFFF; /* Цвет текста */
+            font-family: 'Raleway', sans-serif;
+        }
+        .mdc-top-app-bar__title {
+            font-family: 'Minecraft'; /* Шрифт из Minecraft */
+        }
+
+        a {
+            color: #03DAC6; /* Цвет акцента */
+        }
+        .mdc-top-app-bar {
+            background-color: #BB86FC; /* Второстепенный цвет */
+
+        }
+
+        .mdc-top-app-bar--fixed {
+            right: 0;
+            left: auto;
+        }
+
+        .mdc-button {
+            color: #03DAC6; /* Цвет акцента */
+            border-radius: 50%;
+        }
+        .mdc-button--outlined {
+            border-color: #03DAC6; /* Цвет акцента */
+        }
+        .mdc-card {
+            margin: 20px;
+            padding: 20px;
+            background-color: #2C2C2C; /* Немного светлее основного цвета */
+        }
+        .mdc-card__media {
+            height: 100px;
+            background-size: cover;
+        }
+
+        .mdc-typography--headline6 {
+            margin-top: 2px; /* Уменьшен верхний отступ */
+            margin-bottom: 2px; /* Уменьшен нижний отступ */
+        }
+
+        .content-container {
+            max-width: 800px; /* Максимальная ширина контента */
+            margin: 0 auto; /* Центрирование контента */
+        }
+
+        @media (max-width: 600px) {
+            .mdc-card {
+                margin: 10px;
+            }
+            .mdc-card__media {
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body class="mdc-typography">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <img src="RasphostSquareLogo.gif" alt="Logo" style="max-width: 100%; max-height: 50px;">
+                <span class="mdc-top-app-bar__title" style="font-size: 30px;">Rasphost</span>
+            </section>
+        </div>
+    </header>
+
+    <main class="mdc-top-app-bar--fixed-adjust">
+        <div class="content-container">
+            <div class="mdc-card">
+                <h2 class="mdc-typography--headline6">Информация о сервере</h2>
+                <div class="mdc-card__media" style="background-image: url('server_image.png');"></div>
+                <p class="mdc-typography--body1">
+                    🎮 Добро пожаловать в Rasphost.com - твой уникальный Minecraft сервер! 🎮<br><br>
+            
+                    ✨ Раскрой свой потенциал в двух уникальных игровых режимах! ✨<br><br>
+            
+                    🔥 Анархия: Здесь правила создаешь ты! 🔥<br><br>
+                    На нашем сервере анархии ты можешь пустить на волю свою фантазию и творчество. Строй, разрушай, исследуй, и все это без запретов, кроме одного - читы остаются вне игры. Покажи свои уникальные навыки и стань королем хаоса в мире Minecraft!<br><br>
+            
+                    🏰 Строительство: Создавай мир, дружи и общайся! 🏰<br><br>
+                    Для тех, кто ищет спокойствие и возможность поделиться своими творениями с другими, у нас есть режим строительства. Здесь ты можешь создавать потрясающие сооружения, развиваться вместе с другими игроками и наслаждаться креативным процессом без страха быть атакованным. Встречай новых друзей и создавай незабываемые моменты!<br><br>
+            
+                    🔒 Максимальная безопасность: Наш приоритет! 🔒<br><br>
+                    На Rasphost.com мы уделяем особое внимание безопасности. Наша команда активно следит за сервером, чтобы предотвратить любые нарушения и обеспечить честную игру для всех участников. Твоя безопасность - наша забота!<br><br>
+            
+                    💎 Присоединяйся сегодня и окунись в мир приключений! 💎<br><br>
+                    Ссылка на наш Discord сервер: <a href="https://discord.gg/Nua5v45E6K">https://discord.gg/Nua5v45E6K</a><br><br>
+            
+                    🌟 Преимущества Rasphost.com: 🌟<br><br>
+            
+                    - Возможность выразить свою творческую сущность в анархии
+                    - Расслабляющий и дружелюбный режим строительства
+                    - Активная администрация
+                    - Высокий аптайм<br><br>
+            
+                    🔥 Rasphost.com - Твой мир, твоя история! 🔥
+                </p>
+            </div>
+
+            <div class="mdc-card">
+                <h2 class="mdc-typography--headline6">Донат</h2>
+                <p class="mdc-typography--body1">
+                    Пожертвования помогают поддерживать и развивать наш сервер. Все средства идут на улучшение оборудования, оплату хостинга и разработку новых функций. Мы ценим вашу поддержку!
+                </p>
+                <div class="mdc-card__actions">
+                    <div class="mdc-card__action-buttons">
+                        <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='https://shop.rasphost.com'">Donate</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mdc-card">
+                <h2 class="mdc-typography--headline6">Мониторинги</h2>
+                <p class="mdc-typography--body1">Узнать больше информации можно на этих сайтах:</p>
+                <div class="mdc-card__actions">
+                    <div class="mdc-card__action-buttons">
+                        <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='https://minecraftrating.ru/server/rasphost/'">
+                            Minecraftrating
+                        </button>
+                        <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='https://hotmc.ru/minecraft-server-180527'">
+                            HotMC
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mdc-card">
+                <h2 class="mdc-typography--headline6">Контакты</h2>
+                <div class="mdc-card__action-buttons">
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='https://discord.gg/Nua5v45E6K'">
+                        <img src="discord.svg" alt="Discord" style="width: 36px; height: 36px;">
+                    </button>
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='vk_link'">
+                        <img src="vk.svg" alt="VK" style="width: 36px; height: 36px;">
+                    </button>
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='https://t.me/rasphost'">
+                        <img src="tg.svg" alt="Telegram" style="width: 36px; height: 36px;">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>mdc.autoInit();</script>
+</body>
+</html>
