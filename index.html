@@ -1,169 +1,294 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>Rasphost</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="icon" href="RasphostSquareLogo.gif"> <!-- Иконка сайта -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="RasphostSquareLogo.gif" type="image/gif">
+    <title>Rasphost.com - Твой уникальный Minecraft сервер</title>
+    <!-- Метатеги для SEO -->
+    <meta name="description" content="Присоединяйся к Rasphost.com - уникальному Minecraft серверу с режимами Анархия и Строительство.">
+    <meta name="keywords" content="Minecraft, сервер, анархия, строительство, Rasphost.com">
+    <!-- Подключение шрифта Raleway -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Встроенный CSS -->
     <style>
+        /* Сброс стилей */
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        @font-face {
-            font-family: 'Minecraft';
-            src: url('mc.otf'); /* Путь к файлу шрифта */
-        }
-
+        /* Основные стили */
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #121212; /* Основной цвет */
-            color: #FFFFFF; /* Цвет текста */
-            font-family: 'Raleway', sans-serif;
-        }
-        .mdc-top-app-bar__title {
-            font-family: 'Minecraft'; /* Шрифт из Minecraft */
+            font-family: 'Raleway', Arial, sans-serif;
+            color: #ffffff;
+            background-color: #121212;
+            line-height: 1.6;
         }
 
-        a {
-            color: #03DAC6; /* Цвет акцента */
+        /* Стиль заголовка и панорамного фото */
+        header {
+            position: relative;
+            height: 100vh;
+            background: url('image.png') no-repeat center center/cover;
+            overflow: hidden;
+            transition: height 0.5s ease;
         }
-        .mdc-top-app-bar {
-            background-color: #BB86FC; /* Второстепенный цвет */
 
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(18, 18, 18, 0.7);
         }
 
-        .mdc-button {
-            color: #03DAC6; /* Цвет акцента */
-            border-radius: 50%;
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
         }
-        .mdc-button--outlined {
-            border-color: #03DAC6; /* Цвет акцента */
+
+        header .overlay h1 {
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+            font-size: 3em;
+            font-weight: 600;
         }
-        .mdc-card {
-            margin: 20px;
+
+        /* Основной контент */
+        main {
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        .mode-box {
+            background-color: #1e1e1e; /* Вы можете выбрать любой оттенок */
             padding: 20px;
-            background-color: #2C2C2C; /* Немного светлее основного цвета */
-        }
-        .mdc-card__media {
-            height: 100px;
-            background-size: cover;
+            margin-bottom: 30px;
+            border-radius: 5px;
         }
 
-        .mdc-typography--headline6 {
-            margin-top: 2px; /* Уменьшен верхний отступ */
-            margin-bottom: 2px; /* Уменьшен нижний отступ */
+        .mode-box h2 {
+            color: #ffcc00; /* Сохраните цвет заголовка */
+            margin-bottom: 15px;
         }
 
-        .content-container {
-            max-width: 800px; /* Максимальная ширина контента */
-            margin: 0 auto; /* Центрирование контента */
+        .mode-box p {
+            color: #dddddd; /* Цвет текста */
+            font-size: 1.1em;
         }
 
-        @media (max-width: 600px) {
-            .mdc-card {
-                margin: 10px;
+
+        .intro p {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 40px;
+            color: #ffcc00;
+            font-weight: 600;
+        }
+
+        .modes .mode h2 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .modes .mode p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: #dddddd;
+        }
+
+        .security, .join, .advantages {
+            text-align: center;
+        }
+
+        .security h2, .join h2, .advantages h2 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .security p, .join p {
+            color: #dddddd;
+            font-size: 1.1em;
+        }
+
+        .advantages ul {
+            list-style: none;
+            margin-top: 20px;
+            padding: 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .advantages li {
+            background: #1e1e1e;
+            margin: 10px 0;
+            padding: 15px;
+            font-size: 1.1em;
+            color: #dddddd;
+            border-radius: 5px;
+        }
+
+        /* Стиль кнопок */
+        .donations, .links, .contacts {
+            text-align: center;
+        }
+
+        .donations h2, .links h2, .contacts h2 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .donations p, .contacts p {
+            color: #dddddd;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .donations .button, .links .button {
+            margin: 10px;
+            padding: 15px 30px;
+            background-color: #ff6600;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .donations .button:hover, .links .button:hover {
+            background-color: #e65c00;
+        }
+
+        .contacts a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contacts a:hover {
+            text-decoration: underline;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            header .overlay h1 {
+                font-size: 2.2em;
             }
-            .mdc-card__media {
-                height: 60px;
+
+            .intro p {
+                font-size: 1.5em;
+            }
+
+            .modes .mode h2, .security h2, .join h2, .advantages h2 {
+                font-size: 1.3em;
+            }
+
+            .donations .button, .links .button {
+                padding: 12px 25px;
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
-<body class="mdc-typography">
-    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-        <div class="mdc-top-app-bar__row">
-            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                <img src="RasphostSquareLogo.gif" alt="Logo" style="max-width: 100%; max-height: 50px;">
-                <span class="mdc-top-app-bar__title" style="font-size: 30px;">Rasphost</span>
-            </section>
+<body>
+
+    <!-- Панорамное фото -->
+    <header>
+        <div class="overlay">
+            <h1>Добро пожаловать на Rasphost.com<br>🎮 Твой уникальный Minecraft сервер! 🎮</h1>
         </div>
     </header>
 
-    <main class="mdc-top-app-bar--fixed-adjust">
-        <div class="content-container">
-            <div class="mdc-card">
-                <h2 class="mdc-typography--headline6">Информация о сервере</h2>
-                <div class="mdc-card__media" style="background-image: url('server_image.png');"></div>
-                <p class="mdc-typography--body1">
-                    🎮 Добро пожаловать в Rasphost.com - твой уникальный Minecraft сервер! 🎮<br><br>
-            
-                    ✨ Раскрой свой потенциал в двух уникальных игровых режимах! ✨<br><br>
-            
-                    🔥 Анархия: Здесь правила создаешь ты! 🔥<br><br>
-                    На нашем сервере анархии ты можешь пустить на волю свою фантазию и творчество. Строй, разрушай, исследуй, и все это без запретов, кроме одного - читы остаются вне игры. Покажи свои уникальные навыки и стань королем хаоса в мире Minecraft!<br><br>
-            
-                    🏰 Строительство: Создавай мир, дружи и общайся! 🏰<br><br>
-                    Для тех, кто ищет спокойствие и возможность поделиться своими творениями с другими, у нас есть режим строительства. Здесь ты можешь создавать потрясающие сооружения, развиваться вместе с другими игроками и наслаждаться креативным процессом без страха быть атакованным. Встречай новых друзей и создавай незабываемые моменты!<br><br>
-            
-                    🔒 Максимальная безопасность: Наш приоритет! 🔒<br><br>
-                    На Rasphost.com мы уделяем особое внимание безопасности. Наша команда активно следит за сервером, чтобы предотвратить любые нарушения и обеспечить честную игру для всех участников. Твоя безопасность - наша забота!<br><br>
-            
-                    💎 Присоединяйся сегодня и окунись в мир приключений! 💎<br><br>
-                    Ссылка на наш Discord сервер: <a href="https://discord.gg/Nua5v45E6K" target="_blank">https://discord.gg/Nua5v45E6K</a><br><br>
-            
-                    🌟 Преимущества Rasphost.com: 🌟<br><br>
-            
-                    - Возможность выразить свою творческую сущность в анархии
-                    - Расслабляющий и дружелюбный режим строительства
-                    - Активная администрация
-                    - Высокий аптайм<br><br>
-            
-                    🔥 Rasphost.com - Твой мир, твоя история! 🔥
-                </p>
-            </div>
+    <!-- Основной контент -->
+    <main>
+        <section class="intro">
+            <p>✨ Раскрой свой потенциал в двух игровых режимах! ✨</p>
+        </section>
 
-            <div class="mdc-card">
-                <h2 class="mdc-typography--headline6">Донат</h2>
-                <p class="mdc-typography--body1">
-                    Пожертвования помогают поддерживать и развивать наш сервер. Все средства идут на улучшение оборудования, оплату хостинга и разработку новых функций. Мы ценим вашу поддержку!
-                </p>
-                <div class="mdc-card__actions">
-                    <div class="mdc-card__action-buttons">
-                        <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="window.open('https://shop.rasphost.com', '_blank')">Donate</button>
-                    </div>
-                </div>
+        <section class="modes">
+            <div class="mode-box">
+                <h2>🔥 Анархия: Здесь правила создаешь ты! 🔥</h2>
+                <p>На нашем сервере анархии ты можешь пустить на волю свою фантазию и творчество. Строй, разрушай, исследуй, и все это без запретов, кроме одного — читы остаются вне игры. Покажи свои уникальные навыки и стань королем хаоса в мире Minecraft!</p>
             </div>
-            
-            <div class="mdc-card">
-                <h2 class="mdc-typography--headline6">Мониторинги</h2>
-                <p class="mdc-typography--body1">Узнать больше информации можно на этих сайтах:</p>
-                <div class="mdc-card__actions">
-                    <div class="mdc-card__action-buttons">
-                        <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="window.open('https://minecraftrating.ru/server/rasphost/', '_blank')">
-                            Minecraftrating
-                        </button>
-                        <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="window.open('https://hotmc.ru/minecraft-server-180527', '_blank')">
-                            HotMC
-                        </button>
-                    </div>
-                </div>
+            <div class="mode-box">
+                <h2>🏰 Строительство: Создавай мир, дружи и общайся! 🏰</h2>
+                <p>Для тех, кто ищет спокойствие и возможность поделиться своими творениями с другими, у нас есть режим строительства. Здесь ты можешь создавать потрясающие сооружения, развиваться вместе с другими игроками и наслаждаться креативным процессом без страха быть атакованным. Встречай новых друзей и создавай незабываемые моменты!</p>
             </div>
+        </section>
 
-            <div class="mdc-card">
-                <h2 class="mdc-typography--headline6">Контакты</h2>
-                <div class="mdc-card__action-buttons">
-                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="window.open('https://discord.gg/Nua5v45E6K', '_blank')">
-                        <img src="discord.svg" alt="Discord" style="width: 36px; height: 36px;">
-                    </button>
-                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="window.open('https://vk.com/rasphost', '_blank')">
-                        <img src="vk.svg" alt="VK" style="width: 36px; height: 36px;">
-                    </button>
-                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="window.open('https://t.me/rasphost', '_blank')">
-                        <img src="tg.svg" alt="Telegram" style="width: 36px; height: 36px;">
-                    </button>
-                </div>
-            </div>
-        </div>
+
+        <section class="security">
+            <h2>🔒 Максимальная безопасность: Наш приоритет! 🔒</h2>
+            <p>На Rasphost.com мы уделяем особое внимание безопасности. Наша команда активно следит за сервером, чтобы предотвратить любые нарушения и обеспечить честную игру для всех участников. Твоя безопасность — наша забота!</p>
+        </section>
+
+        <section class="join">
+            <h2>💎 Присоединяйся сегодня и окунись в мир приключений! 💎</h2>
+        </section>
+
+        <section class="advantages">
+            <h2>🌟 Преимущества Rasphost.com: 🌟</h2>
+            <ul>
+                <li>Возможность выразить свою творческую сущность в анархии</li>
+                <li>Расслабляющий и дружелюбный режим строительства</li>
+                <li>Активная администрация</li>
+                <li>Высокий аптайм</li>
+            </ul>
+            <h2>🔥 Rasphost.com - Твой мир, твоя история! 🔥</h2>
+        </section>
+
+        <!-- Информация о донатах -->
+        <section class="donations">
+            <h2>Поддержи наш сервер</h2>
+            <p>Пожертвования помогают поддерживать и развивать наш сервер. Все средства идут на улучшение оборудования, оплату хостинга и разработку новых функций. Мы ценим вашу поддержку!</p>
+            <a href="https://shop.rasphost.com" class="button">Сделать пожертвование</a>
+        </section>
+
+        <!-- Контакты -->
+        <section class="contacts">
+            <h2>Свяжитесь с нами</h2>
+            <p>Телеграм: <a href="https://t.me/rasphost">t.me/rasphost</a></p>
+            <p>Дискорд: <a href="https://dsc.gg/rasphost">dsc.gg/rasphost</a></p>
+            <p>ВКонтакте: <a href="https://vk.com/rasphost">vk.com/rasphost</a></p>
+        </section>
     </main>
-    <script>mdc.autoInit();</script>
+
+    <!-- Встроенный JavaScript -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollPosition = window.scrollY;
+            if(scrollPosition < 500) {
+                header.style.height = (100 - scrollPosition / 10) + 'vh';
+            } else {
+                header.style.height = '50vh';
+            }
+        });
+    </script>
 </body>
 </html>
